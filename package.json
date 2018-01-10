@@ -1,0 +1,45 @@
+{
+  "name": "todo-fullstack-react-redux",
+  "version": "1.0.0",
+  "description": "fullstack mern stack app with redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nverges/ToDo-FullStack-React-Redux.git"
+  },
+  "author": "nick_verges",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nverges/ToDo-FullStack-React-Redux/issues"
+  },
+  "homepage": "https://github.com/nverges/ToDo-FullStack-React-Redux#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.13.9",
+    "react": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-form": "^7.2.0",
+    "redux-promise": "^0.5.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "chai": "^4.1.2",
+    "jquery": "^3.2.1",
+    "mocha": "^4.1.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.1"
+  }
+}
