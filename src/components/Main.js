@@ -8,9 +8,11 @@ class Main extends React.Component {
 
     render() {
         return (
-            <div>Main Component
-
+            <div>
+                
+                Main Component
                 <ViewToDos />
+                
             </div>
 
         )

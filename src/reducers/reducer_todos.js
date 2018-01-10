@@ -3,12 +3,12 @@ import { FETCH_TODOS } from '../actions/todo_actions';
 
 export default function(state = {}, action) {
 
-    console.log(action);
-
     switch(action.type) {
 
         case FETCH_TODOS:
-            return _.mapKeys(action.payload.data, '_id');
+            return action.payload.data;
+            // return action.payload.data;
+            // console.log(action.payload.data);
             console.log('here');
         default:
             return state

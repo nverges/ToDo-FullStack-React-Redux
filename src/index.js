@@ -12,7 +12,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import reducers from './reducers';
 import Main from './components/Main';
 import Test from './components/Test';
-import ViewTodos from './components/view_todos';
+import ViewToDos from './components/view_todos';
 
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -25,7 +25,7 @@ ReactDOM.render(
       <div>
         <Switch>
           <Route path='/' component={Main} />
-          <Route path='/view' component={ViewTodos} />
+          <Route path='/view' component={ViewToDos} />
           <Route path='/test' component={Test} />
         </Switch>
       </div>

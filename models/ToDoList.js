@@ -26,7 +26,7 @@ var ToDoListSchema = new Schema({
   }
 });
 
-// Create the Article model with the ArticleSchema
+// Create the To-Do model with the ToDoListSchema
 var ToDos = mongoose.model("To-Do", ToDoListSchema);
 
 // Export the model

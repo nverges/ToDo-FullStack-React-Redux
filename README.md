@@ -24,3 +24,5 @@ nightmare
 
 **THINGS STILL TO ADD**: 
 -passport authentication
+- DELETE route
+- UPDATE route
