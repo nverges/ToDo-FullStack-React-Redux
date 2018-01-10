@@ -13,10 +13,10 @@ module.exports = {
     loaders: [
       {
         // Only working with files that in in a .js or .jsx extension
-        test: /\.jsx?$/,
+        test: /\.js?$/,
         // Webpack will only process files in our app folder. This avoids processing
         // node modules and server files unnecessarily
-        include: /app/,
+        include: /src/,
         loader: "babel-loader",
         query: {
           // These are the specific transformations we'll be using.

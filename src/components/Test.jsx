@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class Test extends React.Component {
+class Test extends Component {
     render() {
         return (
             <div>Test Component!</div>
-        );
+        )
     }
 }
 

@@ -1,8 +1,10 @@
 // Include Server Dependencies
 const express = require("express");
 const bodyParser = require("body-parser");
-// const logger = require("morgan");
+const logger = require("morgan");
 const mongoose = require("mongoose");
+const path = require("path");
+const React = require('react');
 
 // Require History Schema
 const Article = require("./models/ToDoList.js");
@@ -18,27 +20,28 @@ require("./routes/api-routes")(router);
 const PORT = process.env.PORT || 3000;
 
 // Run Morgan for Logging
-// app.use(logger("dev"));
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.text());
-// app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(logger("dev"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Declares Express static folder
-app.use(express.static("public"));
+// app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Use Router
 app.use(router);
 
 // -------------------------------------------------
 
-// MongoDB Configuration configuration (Change this URL to your own DB)
+// MongoDB Configuration configuration
 if (PORT === 3000) {
   mongoose.connect("mongodb://localhost/ToDoApp", {
     useMongoClient: true
   });
 } else {
-  mongoose.connect("mongodb://heroku_ndqrkzz6:jcqblmcqcf1ckg0vmbqisonmnj@ds127044.mlab.com:27044/heroku_ndqrkzz6", {
+  mongoose.connect("", {
     useMongoClient:true
   });
 };
