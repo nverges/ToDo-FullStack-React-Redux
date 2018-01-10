@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
+import { fetchToDos } from '../actions/todo_actions';
+
+import ViewToDos from './view_todos';
 
 class Main extends React.Component {
+
     render() {
         return (
-            <div>Main Component</div>
+            <div>Main Component
+
+                <ViewToDos />
+            </div>
+
         )
     }
 }
