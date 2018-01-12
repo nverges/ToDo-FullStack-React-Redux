@@ -10,8 +10,9 @@ export default function(state = {}, action) {
             // return action.payload.data;
             // console.log(action.payload.data);
             console.log('here');
+
         default:
-            return state
+            return state;
     }
 
 }

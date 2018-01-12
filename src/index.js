@@ -24,9 +24,9 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path='/' component={Main} />
           <Route path='/view' component={ViewToDos} />
           <Route path='/test' component={Test} />
+          <Route path='/' component={Main} />
         </Switch>
       </div>
     </BrowserRouter>

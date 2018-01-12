@@ -1,8 +1,13 @@
+// Libraries
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+// Actions
 import { fetchToDos } from '../actions/todo_actions';
 
+// Components
 import ViewToDos from './view_todos';
+import CreateToDo from './create_todo';
 
 class Main extends React.Component {
 
@@ -12,7 +17,8 @@ class Main extends React.Component {
                 
                 Main Component
                 <ViewToDos />
-                
+                <CreateToDo />
+
             </div>
 
         )

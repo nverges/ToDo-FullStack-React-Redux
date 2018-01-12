@@ -4,6 +4,7 @@
     "description": "fullstack mern stack app with redux",
     "main": "index.js",
     "scripts": {
+        "start": "concurrently \"mongod\" \"sass --watch style.scss:style.css\" \"webpack -w\" \"nodemon server\" ",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -20,6 +21,7 @@
         "axios": "^0.17.1",
         "babel-preset-stage-1": "^6.24.1",
         "body-parser": "^1.18.2",
+        "concurrently": "^3.5.1",
         "express": "^4.16.2",
         "lodash": "^4.17.4",
         "mongoose": "^4.13.9",

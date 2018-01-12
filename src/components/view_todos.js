@@ -28,8 +28,8 @@ class ViewToDos extends Component {
                 <li className='list-group-item' key={todo._id}>
                     {todo.title}
                 </li>
-            )
-        });
+            );
+        })
     }
 
     render() {
@@ -50,3 +50,4 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, { fetchToDos })(ViewToDos);
+
