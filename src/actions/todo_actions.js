@@ -3,25 +3,48 @@ import axios from 'axios';
 export const FETCH_TODOS = 'FETCH_TODOS';
 export const CREATE_TODO = 'CREATE_TODO';
 
-const ROOT_URL = 'http://localhost:3000'
+const ROOT_URL = 'http://localhost:3000';
+
+
+/// FETCH ///
 
 export function fetchToDos() {
-
-    const request = axios.get(`${ROOT_URL}/api/todolist`);
-    // const request = axios.get('http://localhost:3000/api/todolist');
-
-    return {
-        type: FETCH_TODOS,
-        payload: request
+    return function(dispatch, getState) {
+        const request = axios.get(`${ROOT_URL}/api/todolist`);
+        return request.then((data) => {
+            console.log(data);
+            return dispatch(fetchToDoSuccess(data))
+        })
     }
 }
 
-export function createToDo() {
+export function fetchToDoSuccess(toDos) {
+    
+    return {
+        type: FETCH_TODOS,
+        payload: toDos
+    }
 
-    const request = axios.post(`${ROOT_URL}/api/todolist`);
+}
+
+/// CREATE ///
+
+export function createToDo(values) {
+    return function(dispatch, getState) {
+        const request = axios.post(`${ROOT_URL}/api/todolist`, values)
+            return request.then((res) => {
+                return dispatch(createToDoSuccess(res.data))
+        })
+    }
+}
+
+export function createToDoSuccess(toDo) {
+    console.log(toDo);
 
     return {
         type: CREATE_TODO,
-        payload: request
+        toDo
     }
 }
+
+

@@ -17,7 +17,6 @@ class ViewToDos extends Component {
             console.log('props check');
             return
         }
-
         this.props.fetchToDos();
     }
 
@@ -25,15 +24,20 @@ class ViewToDos extends Component {
         return _.map(this.props.todos, todo => {
             return (
                 // console.log(todo.title);
-                <li className='list-group-item' key={todo._id}>
-                    {todo.title}
-                </li>
+                <div>
+                    <li className='list-group-item' key={todo._id}>
+                        <p>{todo.title}</p>
+                        <Link to={`/api/todolist/${todo._id}`}>{todo.category}</Link>
+                        <p>{todo.dueDate}</p>
+                        <p>{todo.comments}</p>
+                    </li>
+                </div>
             );
         })
     }
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         return (    
             <div>
                 <h2>To Do List</h2>

@@ -6,21 +6,21 @@ var Schema = mongoose.Schema;
 // Create article schema
 var ToDoListSchema = new Schema({
 
-  article_id: {
+  title: {
     type: String,
   },
   // title is a required string
-  title: {
+  category: {
     type: String,
     // required: true
   },
   // link is a required string
-  date: {
+  dueDate: {
     type: String,
     // required: true
   },
   // This only saves one note's ObjectId, ref refers to the Note model
-  url: {
+  comments: {
     type: String,
     // required: true
   }
