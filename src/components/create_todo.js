@@ -53,7 +53,7 @@ class CreateToDo extends Component {
 
     renderForm() {
         return (
-            <form onSubmit={this.onSubmit.bind(this)}>
+            <form onSubmit={this.onSubmit.bind(this)} className='addToDoForm'>
                 <label htmlFor="title">Title</label> 
                     <div className="form-group">
                         <input 
@@ -97,7 +97,8 @@ class CreateToDo extends Component {
 
     render() {
         return (
-            <div>Create A To Do
+            <div>
+                <h2 className='header'>Create A To Do</h2>
                 {this.renderForm()}
             </div>
         )

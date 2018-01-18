@@ -25,11 +25,11 @@ class ViewToDos extends Component {
             return (
                 // console.log(todo.title);
                 <div>
-                    <li className='list-group-item' key={todo._id}>
-                        <p>{todo.title}</p>
-                        <Link to={`/api/todolist/${todo._id}`}>{todo.category}</Link>
-                        <p>{todo.dueDate}</p>
-                        <p>{todo.comments}</p>
+                    <li className='list-group-item' id='toDoList' key={todo._id}>
+                        <h3>{todo.title}</h3>
+                        {/* <p>{todo.category}</p> */}
+                        <p>Due on: {todo.dueDate}</p>
+                        <p>Comments: {todo.comments}</p>
                     </li>
                 </div>
             );
@@ -37,10 +37,15 @@ class ViewToDos extends Component {
     }
 
     render() {
+
+        if (this.props.todos.length < 1) {
+            return <h2>You have nothing to do... </h2>
+        }
+
         // console.log(this.props);
         return (    
             <div>
-                <h2>To Do List</h2>
+                <h2 className='header'>To Do List</h2>
                 <ul className='list-group'>
                     {this.renderList()}
                 </ul>
