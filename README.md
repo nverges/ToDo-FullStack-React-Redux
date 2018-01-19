@@ -1,9 +1,12 @@
 # ToDo-FullStack-React-Redux
 Full Stack app built completely from scratch! 
 
+-------------
 **** run 'npm start' ****
+
 - starts MongoDB server, watches Sass file, bundles with webpack, and starts nodemon - 
 (Requires installation of MongoDB server client)
+-------------
 
 
 *Front End*

@@ -37,13 +37,7 @@ class CreateToDo extends Component {
             category: this.state.category,
             dueDate: this.state.dueDate,
             comments: this.state.comments
-        }).then((newToDo) => {
-            console.log(newToDo);
-            // this.setState({ history: props.history.todos.push(newToDo)});
-            // this line will hit react router!
-            this.props.history.push('/');
         });
-    
     }
 
     handleChange (key, event) {

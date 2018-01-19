@@ -24,7 +24,7 @@ module.exports = function(router) {
             if (err) {
                 console.log(err);
             } else {
-                res.send(req.body);
+                res.send(todo);
             }
         });
     });
@@ -32,9 +32,9 @@ module.exports = function(router) {
     // Delete route
     router.delete("/api/todolist/:id", function(req, res) {
 
-        console.log('Delete Article ID: ', req.body);
+        console.log(req.body);
         const { _id } = req.body;
-        ToDoList.findOneAndRemove(_id, function(err, doc) {
+        ToDoList.deleteOne(_id, function(err, doc) {
           if (err) {
             console.log(err);
           }

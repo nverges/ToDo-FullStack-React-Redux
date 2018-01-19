@@ -21,28 +21,44 @@ class ViewToDos extends Component {
     }
 
     renderList() {
-        return _.map(this.props.todos, todo => {
+        return _.map(this.props.todos, (todo) => {
             return (
-                // console.log(todo.title);
-                <div>
-                    <li className='list-group-item' id='toDoList' key={todo._id}>
-                        <h3>{todo.title}</h3>
-                        {/* <p>{todo.category}</p> */}
-                        <p>Due on: {todo.dueDate}</p>
-                        <p>Comments: {todo.comments}</p>
-                    </li>
-                </div>
+                <li className='list-group-item' id='toDoList' key={todo._id}>
+                    <h3>{todo.title}</h3>
+                    {/* <p>{todo.category}</p> */}
+                    <p>Due on: {todo.dueDate}</p>
+                    <p>Comments: {todo.comments}</p>
+                    <p>ID: {todo._id}</p>
+                </li>
             );
         })
     }
 
+    // renderList() {
+    //     const ToDoList = this.props.todos.map((todo) => 
+    //                 <li className='list-group-item' id='toDoList' key={todo._id}>
+    //                     <h3>{todo.title}</h3>
+    //                     {/* <p>{todo.category}</p> */}
+    //                     <p>Due on: {todo.dueDate}</p>
+    //                     <p>Comments: {todo.comments}</p>
+    //                     <p>ID: {todo._id}</p>
+    //                 </li>
+    //     )
+    //     return (
+    //         <ul>{ToDoList}</ul>
+    //     )
+    // }
+
     render() {
 
-        if (this.props.todos.length < 1) {
-            return <h2>You have nothing to do... </h2>
-        }
+        // if (this.props.todos.length < 1) {
+        //     return (
+        //         <li className='list-group-item'>
+        //             <h3 className='header'>You have nothing to do... </h3>
+        //         </li>
+        //     )
+        // }
 
-        // console.log(this.props);
         return (    
             <div>
                 <h2 className='header'>To Do List</h2>

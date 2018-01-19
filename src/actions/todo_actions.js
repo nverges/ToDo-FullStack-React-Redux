@@ -6,7 +6,7 @@ export const CREATE_TODO = 'CREATE_TODO';
 const ROOT_URL = 'http://localhost:3000';
 
 
-/// FETCH ///
+/// FETCH ACTIONS ///
 
 export function fetchToDos() {
     return function(dispatch, getState) {
@@ -27,12 +27,11 @@ export function fetchToDoSuccess(toDos) {
 
 }
 
-/// CREATE ///
+/// CREATE ACTIONS ///
 
 export function createToDo(values) {
     return function(dispatch, getState) {
-        const request = axios.post(`${ROOT_URL}/api/todolist`, values)
-            return request.then((res) => {
+            axios.post(`${ROOT_URL}/api/todolist`, values).then((res) => {
                 return dispatch(createToDoSuccess(res.data))
         })
     }
