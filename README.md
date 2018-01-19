@@ -14,12 +14,15 @@ Full Stack app built completely from scratch!
 - SaSS
 - CSS Grid
 
-
 *Back End*
 - Redux
 - Node
 - Express
 - MongoDB
+
+*Middleware*
+- Mongoose ORM
+- Redux Thunk
 
 
 *Testing*
@@ -31,6 +34,6 @@ Full Stack app built completely from scratch!
 
 **THINGS STILL TO ADD**: 
 - passport authentication
-- DELETE route
 - UPDATE route
+- unit tests
 - styling
