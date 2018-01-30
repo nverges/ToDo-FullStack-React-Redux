@@ -19,7 +19,7 @@ module.exports = function(router) {
         });
     });
     
-    router.post('/api/todolist', function (req,res) {
+    router.post('/api/todolist', function (req, res) {
         ToDoList.create(req.body, function(err, todo) {
             if (err) {
                 console.log(err);
@@ -29,21 +29,39 @@ module.exports = function(router) {
         });
     });
 
-    // Delete route
-    router.delete("/api/todolist/:id", function(req, res) {
-
-        console.log(req.body);
-        const { _id } = req.body;
-        ToDoList.deleteOne(_id, function(err, doc) {
-          if (err) {
-            console.log(err);
-          }
-          else {
-            res.send(doc);
+    router.delete('/api/todolist', function(req, res) {
+        const { id } = req.params;
+        // console.log(req.body);
+        console.log(id)
+        ToDoList.deleteOne( { id } , function(err, todo) {
+            if (err) {
+            console.log(err);   
+            }
+            else {
+            res.send(todo);
             console.log('Article Deleted');
-          }
+            }
         });
-      });
+    });
+
+    router.put('/api/todolist', function(req, res) {
+        const doc = {
+            title: req.body.title,
+            category: req.body.category,
+            dueDate: req.body.dueDate,
+            comments: req.body.comments,
+            completed: req.body.completed
+        }
+        ToDoList.update( {_id: req.params.id} ), doc, function(err, todo) {
+            if (err) {
+                console.log('error updating entry');
+                res.send(err);
+            } else {
+                console.log('entry updated successfully');
+                res.send(todo);
+            }
+        }
+    })
     
     
     router.get('*', function (req, res) {

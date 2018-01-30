@@ -8,6 +8,7 @@ var ToDoListSchema = new Schema({
 
   title: {
     type: String,
+    // required: true
   },
   // title is a required string
   category: {
@@ -23,6 +24,10 @@ var ToDoListSchema = new Schema({
   comments: {
     type: String,
     // required: true
+  },
+  completed: {
+    type: Boolean
+    // required: false
   }
 });
 

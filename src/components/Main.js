@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // Actions
-import { fetchToDos } from '../actions/todo_actions';
+import * as toDoActions from '../actions/todo_actions';
 
 // Components
 import ViewToDos from './view_todos';

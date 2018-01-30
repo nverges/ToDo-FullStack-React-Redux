@@ -18,32 +18,41 @@ class CreateToDo extends Component {
             title: '',
             category: '',
             dueDate: '',
-            comments: ''
+            comments: '',
+            completed: false
         }
     }
 
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     this.props.createToDo();
-    //     console.log('submit click event');
-    // }
-
     onSubmit(event) {
-
         event.preventDefault();
 
         this.props.toDoActions.createToDo({
             title: this.state.title,
             category: this.state.category,
             dueDate: this.state.dueDate,
-            comments: this.state.comments
+            comments: this.state.comments,
+            completed: this.state.completed
         });
     }
 
     handleChange (key, event) {
         this.setState({ [key]: event.target.value });
-      }
-    
+    }
+
+    toggleCompleted() {
+        if (this.state.completed === false) {
+            return this.state.completed === true;
+        }
+        return this.state.completed === false;
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props !== this.nextProps) {
+            this.setState({
+                completed: this.state.completed
+            })
+        }
+    }
 
     renderForm() {
         return (
@@ -84,6 +93,15 @@ class CreateToDo extends Component {
                             onChange={this.handleChange.bind(this, 'comments')}
                         ></input>
                     </div>
+                <label htmlFor="Comments">Completed</label> 
+                    <div className="form-group">
+                        <input 
+                            type='checkbox' 
+                            label='Completed'
+                            value={this.toggleCompleted.bind(this)}
+                            onChange={this.handleChange.bind(this, 'completed')}
+                        ></input>
+                    </div>
                 <button className='btn btn-primary' type='submit'>Submit</button>
             </form>
         );
@@ -100,14 +118,14 @@ class CreateToDo extends Component {
 
 }
 
-function mapStateToProps(state) {
-    return {
-        title: state.title,
-        category: state.category
-        // dueDate,
-        // comments
-    }
-}
+// function mapStateToProps(state) {
+//     return {
+//         title: state.title,
+//         category: state.category
+//         // dueDate,
+//         // comments
+//     }
+// }
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -115,4 +133,4 @@ function mapDispatchToProps(dispatch) {
     }
   }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateToDo);
+export default connect(null, mapDispatchToProps)(CreateToDo);

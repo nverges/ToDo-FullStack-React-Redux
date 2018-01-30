@@ -4,6 +4,8 @@
   margin: 0 auto 20px;
   max-width: 25%;
   text-align: center; }
+  .addToDoForm label {
+    font-size: 18px; }
 
 #toDoList {
   border: 1px solid black;
@@ -12,5 +14,17 @@
 
 .header {
   text-align: center; }
+
+.list-group-item {
+  cursor: pointer; }
+  .list-group-item:hover {
+    background-color: #eee; }
+
+.list div {
+  width: 50%;
+  display: inline-block; }
+  .list div .completed {
+    text-align: center;
+    vertical-align: top; }
 
 /*# sourceMappingURL=style.css.map */

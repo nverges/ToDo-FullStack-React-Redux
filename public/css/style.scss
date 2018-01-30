@@ -1,10 +1,13 @@
+// Form component
 .addToDoForm {
     border: 1px solid black;
     padding: 20px;
     margin: 0 auto 20px;
-    ;
     max-width: 25%;
     text-align: center;
+    label {
+        font-size: 18px;
+    }
 }
 
 #toDoList {
@@ -13,6 +16,24 @@
     margin: 20px;
 }
 
+// Titles
 .header {
     text-align: center;
+}
+
+// List of ToDos
+.list-group-item {
+    cursor: pointer;
+    &:hover {
+        background-color: #eee
+    }
+}
+
+.list div {
+    width: 50%;
+    display: inline-block;
+    .completed {
+        text-align: center;
+        vertical-align: top;
+    }
 }
